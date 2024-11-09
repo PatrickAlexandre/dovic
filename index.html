@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dø\/!C</title>
+
+    <style>
+        /* Style général */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: #f7f9fc;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            width: 100%;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        /* Conteneur de cartes */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Style de chaque carte */
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 150px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card a:hover {
+            color: #4CAF50;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Pied de page */
+        footer {
+            margin-top: auto;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Icônes */
+        .card-icon {
+            font-size: 24px;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Google</h1>
+    </header>
+
+    <main>
+        <section class="card-container">
+            <div class="card">
+                <a href="#">
+                    <span class="card-icon">💰</span>
+                    Finance
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                    <span class="card-icon">✈️</span>
+                    Flights
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                    <span class="card-icon">📅</span>
+                    Calendar
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                    <span class="card-icon">👤</span>
+                    Contacts
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                    <span class="card-icon">🛒</span>
+                    Shopping
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                    <span class="card-icon">🔐</span>
+                    Gestionnaire de mots de passe
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                    <span class="card-icon">🗺️</span>
+                    Maps
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                    <span class="card-icon">🌍</span>
+                    Voyages
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dø\/!C. Tous droits réservés.</p>
+    </footer>
+
+</body>
+
+</html>

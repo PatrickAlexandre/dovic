@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Centralisée  |  Front-end</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <div class="card shadow bg-dark text-white p-4" style="max-width: 300px;">
+        <section class="mb-4">
+            <p><i class="fas fa-user"></i> Nom : <output name="nom-prenom">John Doe</output></p>
+            <p><i class="fas fa-birthday-cake"></i> Niveau (âge) : <output name="niveau-age">28</output></p>
+        </section>
+        <section class="mb-4">
+            <p><i class="fas fa-star"></i> Expérience : <progress value="28" max="100" class="w-100" style="height: 10px;">28%</progress></p>
+            <p><i class="fas fa-heartbeat"></i> Espérance de vie : <meter min="0" max="80" value="28" class="w-100" style="height: 10px;">35%</meter></p>
+            <p><i class="fas fa-hourglass-half"></i> Vie restante : <meter min="0" max="80" value="52" class="w-100" style="height: 10px;">65%</meter></p>
+        </section>
+        <section>
+            <p>Nom complet : <output name="Nom">John Doe</output></p>
+            <p>Âge actuel : <output name="Age">28</output></p>
+            <p>EXP : <output name="EXP">70</output></p>
+            <p><i class="fas fa-bolt"></i> Progression : <progress value="70" max="100" class="w-100" style="height: 10px;">70%</progress></p>
+            <p><i class="fas fa-battery-full"></i> Batterie : <meter min="0" max="100" value="70" class="w-100" style="height: 10px;">70%</meter></p>
+            <p>Dernière mise à jour : <time datetime="2024-11-09">9 Novembre 2024</time></p>
+            <p>Ceci est un <mark class="bg-warning text-dark">résultat important <ruby>0<rt>kcal</rt></ruby></mark>.</p>
+        </section>
+    </div>
+
+
+    <hr>
+
+    <div class="container">
+        <h1 class="text-center my-4">Services Google</h1>
+        <div class="row">
+            <!-- Carte Finance -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <i class="fas fa-wallet"></i> Finance
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Suivi Financier</h5>
+                        <p class="card-text">Gérez vos finances personnelles avec des tableaux de suivi et des outils
+                            d'analyse.</p>
+                        <input type="number" class="form-control mb-2" placeholder="Ajouter un montant">
+                        <button class="btn btn-custom">Ajouter</button>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button class="btn btn-primary">Voir détails</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte Flights -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <i class="fas fa-plane"></i> Flights
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Gestion des Vols</h5>
+                        <p class="card-text">Consultez et gérez vos réservations de vols et informations de voyage.</p>
+                        <input type="text" class="form-control mb-2" placeholder="Numéro de vol">
+                        <button class="btn btn-custom">Rechercher</button>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button class="btn btn-info">Voir détails</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte Calendar -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <i class="fas fa-calendar-alt"></i> Calendar
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Calendrier</h5>
+                        <p class="card-text">Planifiez vos événements et rendez-vous en un seul endroit.</p>
+                        <input type="date" class="form-control mb-2">
+                        <button class="btn btn-custom">Ajouter</button>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button class="btn btn-success">Voir calendrier</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte Contacts -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-secondary text-white">
+                        <i class="fas fa-address-book"></i> Contacts
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Gestion des Contacts</h5>
+                        <p class="card-text">Organisez et accédez facilement à vos contacts personnels.</p>
+                        <input type="text" class="form-control mb-2" placeholder="Nom du contact">
+                        <button class="btn btn-custom">Ajouter</button>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button class="btn btn-secondary">Voir tous</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte Shopping -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-warning text-white">
+                        <i class="fas fa-shopping-cart"></i> Shopping
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Liste de Shopping</h5>
+                        <p class="card-text">Créez et gérez votre liste de courses en toute simplicité.</p>
+                        <input type="text" class="form-control mb-2" placeholder="Article à acheter">
+                        <button class="btn btn-custom">Ajouter</button>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button class="btn btn-warning">Voir liste</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte Gestionnaire de Mots de Passe -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-danger text-white">
+                        <i class="fas fa-key"></i> Gestionnaire de Mots de Passe
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Stockage de Mots de Passe</h5>
+                        <p class="card-text">Gardez vos mots de passe en sécurité et accédez-y facilement.</p>
+                        <input type="password" class="form-control mb-2" placeholder="Nouveau mot de passe">
+                        <button class="btn btn-custom">Ajouter</button>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button class="btn btn-danger">Gérer</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte Maps -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <i class="fas fa-map"></i> Maps
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Carte</h5>
+                        <p class="card-text">Explorez des lieux, planifiez vos trajets et consultez des cartes.</p>
+                        <input type="text" class="form-control mb-2" placeholder="Recherche d'emplacement">
+                        <button class="btn btn-custom">Rechercher</button>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button class="btn btn-dark">Voir carte</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte Voyages -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <i class="fas fa-suitcase"></i> Voyages
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Gestion des Voyages</h5>
+                        <p class="card-text">Organisez vos voyages et consultez vos itinéraires en un clic.</p>
+                        <input type="text" class="form-control mb-2" placeholder="Destination">
+                        <button class="btn btn-custom">Ajouter</button>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button class="btn btn-primary">Voir détails</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte Drive -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <i class="fas fa-hdd"></i> Drive
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Gestion des Fichiers</h5>
+                        <p class="card-text">Stockez, organisez et accédez à vos fichiers en ligne facilement et en toute sécurité.</p>
+                        <input type="file" class="form-control mb-2">
+                        <button class="btn btn-custom">Téléverser</button>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button class="btn btn-primary">Voir fichiers</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h1 class="text-center my-4">Autres...</h1>
+        <div class="row">
+            <!-- Carte -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <i class="fas fa-wallet"></i> X
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text"></p>
+                        <input type="number" class="form-control mb-2" placeholder="Ajouter un montant">
+                        <button class="btn btn-custom">Ajouter</button>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button class="btn btn-primary">Voir détails</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <i class="fas fa-plane"></i> A
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text"></p>
+                        <input type="text" class="form-control mb-2" placeholder="Numéro de vol">
+                        <button class="btn btn-custom">Rechercher</button>
+                    </div>
+                    <div class="card-footer text-right">
+                        <button class="btn btn-info">Voir détails</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

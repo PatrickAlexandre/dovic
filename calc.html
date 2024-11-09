@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head><body>
+
+
+
+
+    <div class="card shadow bg-dark text-white p-4" style="max-width: 300px;">
+        <section class="mb-4">
+            <p><i class="fas fa-user"></i> Nom : <output name="nom-prenom">John Doe</output></p>
+            <p><i class="fas fa-birthday-cake"></i> Niveau (âge) : <output name="niveau-age">28</output></p>
+        </section>
+        <section class="mb-4">
+            <p><i class="fas fa-star"></i> Expérience : <progress value="28" max="100" class="w-100" style="height: 10px;">28%</progress></p>
+            <p><i class="fas fa-heartbeat"></i> Espérance de vie : <meter min="0" max="80" value="28" class="w-100" style="height: 10px;">35%</meter></p>
+            <p><i class="fas fa-hourglass-half"></i> Vie restante : <meter min="0" max="80" value="52" class="w-100" style="height: 10px;">65%</meter></p>
+        </section>
+    </div>
+
+    <div class="container mt-5 mb-5">
+        <div class="card shadow bg-dark text-white p-4">
+            <h3 class="text-center mb-4"><i class="fas fa-chart-line"></i> Suivi Métabolique</h3>
+            
+            <p><i class="fas fa-bed"></i> MB : <output>1500</output> kcal</p>
+            <p><i class="fas fa-running"></i> DEJ : <output>2200</output> kcal</p>
+            
+            <p>Objectif : <meter min="0" max="2200" value="1600" class="w-100" style="height: 10px;">1600</meter></p>
+            <p><i class="fas fa-fire"></i> Consommées : <progress value="1600" max="2200" class="w-100" style="height: 10px;">1600</progress></p>
+            <p>Reste : <output>600</output> kcal</p>
+            
+            <p class="text-center"><i class="fas fa-clock"></i> <time datetime="2024-11-09">9 Nov 2024</time></p>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+<!--
+        <p><i class="fas fa-battery-full"></i> Sommeil : <meter min="0" max="100" value="70" class="w-100" style="height: 10px;">70%</meter></p>
+        <p>Dernière mise à jour : <time datetime="2024-11-09">9 Novembre 2024</time></p>
+        <p>Ceci est un <mark class="bg-warning text-dark">résultat important <ruby>0<rt>kcal</rt></ruby></mark>.</p>
+
+
+-->
+</html>
