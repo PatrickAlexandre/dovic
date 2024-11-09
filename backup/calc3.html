@@ -6,14 +6,20 @@
     <title>PattySecretFormula</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href=""><!-- Custom -->
 </head>
+
 <body>
     <div class="container mt-5">
         <div class="row">
+
+            <!-- <input> Données -->
             <div class="col-md-6">
                 <h4>Input</h4>
                 <div id="info-dialog" class="card p-4 shadow">
                     <form id="calculation-form">
+                        <!-- Nom et Prénom -->
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="Nom"><i class="fas fa-user"></i> Nom</label>
@@ -25,6 +31,7 @@
                             </div>
                         </div>
                         
+                        <!-- Date de Naissance, Poids et Taille -->
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="DateNaissance"><i class="fas fa-calendar-alt"></i> Date de Naissance</label>
@@ -40,6 +47,7 @@
                             </div>
                         </div>
                         
+                        <!-- Sexe et Niveau d'activité physique (NAP) -->
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="Sexe"><i class="fas fa-venus-mars"></i> Sexe</label>
@@ -51,73 +59,113 @@
                             <div class="form-group col-md-6">
                                 <label><i class="fas fa-running"></i> Niveau d'activité physique (NAP)</label>
                                 <div>
-                                    <div class="form-check form-check-inline">
-                                        <input type="radio" name="Nap" id="sedentaire" value="1.2" required>
-                                        <label for="sedentaire">Sédentaire</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input type="radio" name="Nap" id="leger" value="1.375" required>
-                                        <label for="leger">Léger</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input type="radio" name="Nap" id="modere" value="1.55" required>
-                                        <label for="modere">Modéré</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input type="radio" name="Nap" id="actif" value="1.725" required>
-                                        <label for="actif">Actif</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input type="radio" name="Nap" id="tresActif" value="1.9" required>
-                                        <label for="tresActif">Très actif</label>
-                                    </div>
+                                    <input type="radio" name="Nap" value="1.2" required> <label>Sédentaire</label>
+                                    <input type="radio" name="Nap" value="1.375" required> <label>Léger</label>
+                                    <input type="radio" name="Nap" value="1.55" required> <label>Modéré</label>
+                                    <input type="radio" name="Nap" value="1.725" required> <label>Actif</label>
+                                    <input type="radio" name="Nap" value="1.9" required> <label>Très actif</label>
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary mt-3">Calculer</button>
                     </form>
                 </div>
             </div>
 
+            <!-- <output> Résultats -->
             <div class="col-md-6">
                 <h4>Output</h4>
+                <!-- Carte Argent -->
                 <div class="result-card shadow">
                     <h5>Argent</h5>
-                    <p><strong>Solde estimé :</strong> <span id="SoldeEstime"></span> €</p>
-                    <p><strong>Économies mensuelles :</strong> <span id="EconomiesMensuelles"></span> €</p>
+                    <p><strong>Solde estimé :</strong> <output id="SoldeEstime"></output> €</p>
+                    <p><strong>Économies mensuelles :</strong> <output id="EconomiesMensuelles"></output> €</p>
                 </div>
                 
+                <!-- Carte Santé -->
                 <div class="result-card shadow">
                     <h5>Santé</h5>
-                    <p><strong>Nom et Prénom :</strong> <span id="NomPrenom"></span></p>
-                    <p><strong>Âge :</strong> <span id="NiveauAge"></span> ans</p>                
-                    <p><strong>MB (Métabolisme de Base) :</strong> <span id="MetabolismeBase"></span> kcal</p>
-                    <p><strong>Dépense Énergétique Journalière (DEJ) :</strong> <span id="DepenseEnergetiqueJournaliere"></span> kcal</p>
+                    <p><strong>Nom et Prénom :</strong> <output id="NomPrenom"></output></p>
+                    <p><strong>Âge :</strong> <output id="NiveauAge"></output> ans</p>                
+                    <p><strong>MB (Métabolisme de Base) :</strong> <output id="MetabolismeBase"></output> kcal</p>
+                    <p><strong>Dépense Énergétique Journalière (DEJ) :</strong> <output id="DepenseEnergetiqueJournaliere"></output> kcal</p>
                 </div>
                 
+                <!-- Carte Objectifs -->
                 <div class="result-card shadow">
                     <h5>Quêtes</h5>
+                    
+                    <!-- Age / Esperance de vie par Sexe -->
                     <div class="TempsRestant">
                         <label class="progress-label">Âge actuel / Espérance de vie</label>
                         <progress id="TempsRestant_progress" max="100" value="0"></progress>
-                        <span id="TempsRestantDecimal">0</span>
-                        <span id="TempsRestantPourcentage">0%</span>
+                        <output id="TempsRestantDecimal">0</output>
+                        <output id="TempsRestantPourcentage">0%</output>
                     </div>
                     
+                    <!-- Barre de calories consommées - DEJ -->
                     <div class="ObjectifCalories">
                         <label class="progress-label">Calories consommées / Dépense Énergétique Journalière (DEJ)</label>
                         <meter id="Calories_meter" min="0" max="2500" value="0"></meter>
-                        <span id="CaloriesPercentage">0%</span>
-                        <span id="CaloriesDecimal">0</span>
+                        <output id="CaloriesPercentage">0%</output>
+                        <output id="CaloriesDecimal">0%</output>
                     </div>
+
                 </div>
             </div>
+
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js" defer></script>
+
+    <script>
+    // Fonction de calcul et d'affichage automatique des résultats
+    function calculateAndDisplayResults() {
+        const Nom = document.getElementById('Nom').value;
+        const Prenom = document.getElementById('Prenom').value;
+        const DateNaissance = new Date(document.getElementById('DateNaissance').value);
+        const Poids = parseFloat(document.getElementById('Poids').value);
+        const Taille = parseFloat(document.getElementById('Taille').value);
+        const Sexe = document.getElementById('Sexe').value;
+        const NapElement = document.querySelector('input[name="Nap"]:checked');
+        if (!Nom || !Prenom || !DateNaissance || !Poids || !Taille || !Sexe || !NapElement) return;
+
+        const Nap = parseFloat(NapElement.value);
+        const Age = new Date().getFullYear() - DateNaissance.getFullYear();
+
+        // Calcul Métabolisme Basal (MB) avec la formule de Harris-Benedict
+        const MB_HarrisBenedict = (Sexe === "male") 
+            ? 88.362 + (13.397 * Poids) + (4.799 * Taille) - (5.677 * Age) 
+            : 447.593 + (9.247 * Poids) + (3.098 * Taille) - (4.330 * Age);
+
+        const DEJ_HarrisBenedict = MB_HarrisBenedict * Nap;
+        const MB = MB_HarrisBenedict;
+        const DEJ = DEJ_HarrisBenedict;
+
+        // Calculations for financial example (for demo purposes)
+        const SoldeEstime = 2000 + Age * 10; // Placeholder example calculation
+        const EconomiesMensuelles = 200 + Nap * 50; // Placeholder example calculation
+
+        // Mise à jour des éléments de sortie
+        document.querySelector('output[name="nom-prenom"]').textContent = `${Nom} ${Prenom}`;
+        document.querySelector('output[name="niveau-age"]').textContent = Age;
+        document.getElementById('metabolisme_base').textContent = Math.round(MB);
+        document.getElementById('depense_energetique_journaliere').textContent = Math.round(DEJ);
+
+        // Output financial details
+        document.getElementById('solde_estime').textContent = SoldeEstime.toFixed(2);
+        document.getElementById('economies_mensuelles').textContent = EconomiesMensuelles.toFixed(2);
+
+        document.querySelector('progress').value = Age;
+        document.querySelector('meter').value = Age;
+    }
+
+    document.querySelectorAll('#calculation-form input, #calculation-form select').forEach(element => {
+        element.addEventListener('input', calculateAndDisplayResults);
+    });
+    </script><!-- Custom -->
+
 </body>
 </html>

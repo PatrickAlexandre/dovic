@@ -5,7 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PattySecretFormula</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+
+        /* Grid */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        [class*="col-"] {
+            padding-right: 15px;
+            padding-left: 15px;
+            flex-basis: 100%;
+        }
+
+        .col-md-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        /* Card */
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .shadow {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form */
+        form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Inline Form Check */
+        .form-check-inline {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        /* Results Card */
+        .result-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        /* Progress and Meter */
+        .progress-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        progress,
+        meter {
+            width: 100%;
+            height: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        progress::-webkit-progress-bar,
+        meter::-webkit-meter-bar {
+            background-color: #e9ecef;
+            border-radius: 4px;
+        }
+
+        progress::-webkit-progress-value,
+        meter::-webkit-meter-optimum-value {
+            background-color: #007bff;
+            border-radius: 4px;
+        }
+
+        /* Headings */
+        h4, h5 {
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        /* Margin Utility */
+        .mt-3 {
+            margin-top: 1rem;
+        }
+
+        .mt-5 {
+            margin-top: 3rem;
+        }
+
+    </style>
 </head>
 <body>
     <div class="container mt-5">

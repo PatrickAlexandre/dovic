@@ -1,0 +1,48 @@
+body {
+    --primary-color: #0f0;
+    --background-color: #000;
+    --card-background: #0a0a0a;
+    --text-color: #0f0;
+    --input-background: #1a1a1a;
+    --input-border: #0f0;
+    font-family: 'Courier New', monospace;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container, .card, .result-card {
+    color: var(--text-color);
+}
+
+.card, .result-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+label, h4, h5 {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+input, select, button {
+    background-color: var(--input-background);
+    border: 1px solid var(--input-border);
+    color: var(--primary-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: #000;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1a1a1a;
+    color: #0f0;
+}
+
+progress, meter {
+    background-color: #0a0a0a;
+    color: var(--primary-color);
+}

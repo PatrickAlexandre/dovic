@@ -1,0 +1,69 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.col-md-6 {
+    flex: 1;
+    margin: 10px;
+}
+
+.card, .result-card {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h4, .result-card h5 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+progress, meter {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.progress-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.result-card p {
+    margin: 10px 0;
+}
+
+.output-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

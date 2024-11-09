@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head><body>
+
+
+
+    <!-- La boîte de dialogue contenant les champs de saisie -->
+    <dialog id="info-dialog">
+        <form method="dialog">
+            <h2>Mettre à jour les informations</h2>
+
+                <!-- Dialog > Form > Input > Type -->
+                <label for="Nom">Nom :</label>
+                <input type="text" id="Nom" name="Nom" required>
+
+                <label for="Prenom">Prénom :</label>
+                <input type="text" id="Prenom" name="Prenom" required>
+
+                <label for="DateNaissance">Date de Naissance :</label>
+                <input type="date" id="DateNaissance" name="DateNaissance" required>
+
+                <label for="Poids">Poids (kg) :</label>
+                <input type="number" id="Poids" name="Poids" min="0" step="0.1" required>
+
+                <label for="Taille">Taille (cm) :</label>
+                <input type="number" id="Taille" name="Taille" min="0" step="0.1" required>
+
+                <label for="Sexe">Sexe :</label>
+                <select id="Sexe" name="Sexe" required>
+                    <option value="male">Masculin</option>
+                    <option value="female">Féminin</option>
+                    <option value="other">Autre</option>
+                </select>
+
+                <!-- Modification des noms pour le niveau d'activité physique -->
+                <label>Niveau d'Activité Physique :</label>
+                <div>
+                    <input type="radio" id="Faible" name="Nap" value="1.2" required>
+                    <label for="Faible">Faible (sédentaire)</label>
+                </div>
+                <div>
+                    <input type="radio" id="Modere" name="Nap" value="1.55" required>
+                    <label for="Modere">Modéré (activité légère à modérée)</label>
+                </div>
+                <div>
+                    <input type="radio" id="Eleve" name="Nap" value="1.9" required>
+                    <label for="Eleve">Élevé (activité intense)</label>
+                </div>
+
+
+            <!-- Boutons pour confirmer ou annuler -->
+            <menu>
+                <button type="submit">Confirmer</button>
+                <button type="button" onclick="document.getElementById('info-dialog').close()">Annuler</button>
+            </menu>
+        </form>
+    </dialog>
+    <!-- La boîte de dialogue contenant les champs de saisie -->
+
+
+
+    <div class="card shadow bg-dark text-white p-4" style="max-width: 300px;">
+        <section class="mb-4">
+            <p><i class="fas fa-user"></i> Nom : <output name="nom-prenom"></output></p>
+            <p title="Age">Niveau <output name="niveau-age"></output></p>
+        </section>
+        <section>
+            <p><i class="fas fa-hourglass-half"></i> Vie restante : <meter min="0" max="80" value="52" class="w-100" style="height: 10px;">65%</meter></p>
+            <p><i class="fas fa-star"></i> Expérience : <progress value="28" max="100" class="w-100" style="height: 10px;">28%</progress></p>
+        </section>
+    </div>
+
+    <div class="container mt-5 mb-5">
+        <div class="card shadow bg-secondary text-white p-4">
+            <h3 class="text-center mb-4"><i class="fas fa-chart-line"></i> Suivi Métabolique</h3>
+            
+            <p>
+                <span title="Dépense Énergétique Journalière (DEJ)"><i class="fas fa-running"></i> DEJ : <output id="depense_energetique_journaliere">2200</output> kcal</span> = 
+                <span title="Niveau d'Activité Physique (NAP)"><i class="fas fa-bolt"></i> NAP : <output id="niveau_activite_physique">1,6</output></span> * 
+                <span title="Métabolisme de Base (MB)"><i class="fas fa-bed"></i> MB : <output id="metabolisme_base">1500</output> kcal</span>
+            </p>
+
+            <p><i class="fas fa-fire"></i> Calories Consommées : <progress value="1600" max="2200" class="w-100" style="height: 10px;">1600</progress></p>
+            <p>Reste : <output>600</output> kcal</p>
+            
+            <p class="text-center"><i class="fas fa-clock"></i> <time datetime="2024-11-09">9 Nov 2024</time></p>
+        </div>
+    </div>
+
+    <!-- Barre d'actions -->
+    <div class="p-3">
+        <div class="container d-flex justify-content-around">
+            <button class="btn btn-light btn-sm shadow-sm" onclick="document.getElementById('info-dialog').showModal()"><i class="fas fa-sync-alt"></i> Mettre à jour</button>
+            <button class="btn btn-light btn-sm shadow-sm" title="Ajouter"><i class="fas fa-plus"></i></button>
+            <button class="btn btn-light btn-sm shadow-sm" title="Supprimer"><i class="fas fa-trash-alt"></i></button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+document.querySelector('#info-dialog form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    
+    // Récupération des données du formulaire
+    const Nom = document.getElementById('Nom').value;
+    const Prenom = document.getElementById('Prenom').value;
+    const DateNaissance = new Date(document.getElementById('DateNaissance').value);
+    const Poids = parseFloat(document.getElementById('Poids').value);
+    const Taille = parseFloat(document.getElementById('Taille').value);
+    const Sexe = document.getElementById('Sexe').value;
+    const Nap = parseFloat(document.querySelector('input[name="Nap"]:checked').value);
+
+    // Calcul de l'âge
+    const Age = new Date().getFullYear() - DateNaissance.getFullYear();
+
+    // Formule de Devine pour poids idéal
+    const PoidsIdealDevine = (Sexe === "male") 
+        ? 50 + 2.3 * ((Taille / 2.54) - 60) 
+        : 45.5 + 2.3 * ((Taille / 2.54) - 60);
+
+    // Formule de Lorentz pour poids idéal
+    const PoidsIdealLorentz = (Sexe === "male") 
+        ? Taille - 100 - ((Taille - 150) / 4) 
+        : Taille - 100 - ((Taille - 150) / 2.5);
+
+    // Formule de Harris-Benedict (MB)
+    const MB_HarrisBenedict = (Sexe === "male") 
+        ? 88.362 + (13.397 * Poids) + (4.799 * Taille) - (5.677 * Age) 
+        : 447.593 + (9.247 * Poids) + (3.098 * Taille) - (4.330 * Age);
+
+    // Équation de Black et Al (MB)
+    const MB_BlackEtAl = (Sexe === "male") 
+        ? 1.083 * Poids ** 0.48 * Taille ** 0.50 * Age ** -0.13 
+        : 0.963 * Poids ** 0.48 * Taille ** 0.50 * Age ** -0.13;
+
+    // Équation de Mifflin-St Jeor (MB)
+    const MB_MifflinStJeor = (Sexe === "male") 
+        ? (10 * Poids) + (6.25 * Taille) - (5 * Age) + 5 
+        : (10 * Poids) + (6.25 * Taille) - (5 * Age) - 161;
+
+    // Calcul de la DEJ (Dépense Énergétique Journalière) en fonction du NAP
+    const DEJ_HarrisBenedict = MB_HarrisBenedict * Nap;
+    const DEJ_BlackEtAl = MB_BlackEtAl * Nap;
+    const DEJ_MifflinStJeor = MB_MifflinStJeor * Nap;
+
+    // Choix de la formule pour l'affichage (par exemple Harris-Benedict)
+    const MB = MB_HarrisBenedict;
+    const DEJ = DEJ_HarrisBenedict;
+
+    // Mise à jour des éléments de sortie
+    document.querySelector('output[name="nom-prenom"]').textContent = `${Nom} ${Prenom}`;
+    document.querySelector('output[name="niveau-age"]').textContent = Age;
+    
+    document.getElementById('metabolisme_base').textContent = Math.round(MB);
+    document.getElementById('niveau_activite_physique').textContent = Nap.toFixed(1);
+    document.getElementById('depense_energetique_journaliere').textContent = Math.round(DEJ);
+
+    document.querySelector('progress').value = Age;
+    document.querySelector('meter').value = Age;
+    document.querySelector('meter').value = 80 - Age;
+
+    document.getElementById('info-dialog').close();
+});
+
+    </script>
+
+
+</body>
+</html>
